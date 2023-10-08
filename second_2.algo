@@ -1,0 +1,35 @@
+// first 
+def sum_of_distinct_elements(set1, set2):
+  sum = 0
+  for element in set1:
+    sum += element
+  for element in set2:
+    sum += element
+  return sum
+
+set1 = {3, 1, 7, 9}
+set2 = {2, 4, 1, 9, 3}
+print(sum_of_distinct_elements(set1, set2))
+
+//second
+def dot_product(v1, v2):
+  ps = 0
+  for i in range(len(v1)):
+    ps += v1[i] * v2[i]
+  return ps
+
+def are_orthogonal(v1, v2):
+  return dot_product(v1, v2) == 0
+
+def main():
+  n = int(input("Enter the number of pairs of vectors: "))
+  for i in range(n):
+    v1 = list(map(int, input("Enter the first vector: ").split()))
+    v2 = list(map(int, input("Enter the second vector: ").split()))
+    if are_orthogonal(v1, v2):
+      print("The vectors are orthogonal.")
+    else:
+      print("The vectors are not orthogonal.")
+
+if __name__ == "__main__":
+  main()
